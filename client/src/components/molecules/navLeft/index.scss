@@ -1,0 +1,9 @@
+.m-navLeft {
+  @include displayFlex(row, unset, unset);
+
+  &__pathText {
+    @include displayFlex(row, unset, unset);
+    gap: 7px;
+    margin-right: 7px;
+  }
+}

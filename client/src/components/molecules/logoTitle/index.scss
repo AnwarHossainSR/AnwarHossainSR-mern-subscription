@@ -1,0 +1,7 @@
+.m-logoTitle {
+  @include displayFlex(row, center, center);
+  &__logo {
+    margin-right: 7.78px;
+  }
+}
+

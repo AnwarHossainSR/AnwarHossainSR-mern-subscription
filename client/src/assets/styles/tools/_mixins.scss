@@ -1,0 +1,41 @@
+// Font-size and Line-height
+@mixin font($size, $lineHeight) {
+  font-size: $size;
+  line-height: $lineHeight;
+}
+
+// Flexbox
+@mixin displayFlex($direction: null, $jusCon: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jusCon;
+  align-items: $align;
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}

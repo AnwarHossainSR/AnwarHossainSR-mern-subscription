@@ -1,0 +1,30 @@
+.a-textAreaInput {
+  resize: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid $color-gray-light-two;
+  background-color: $color-white;
+  color: $color-black;
+  width: 100%;
+  font-size: $font-14;
+
+  &::placeholder {
+    color: $color-secondary-two;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--smallHeight {
+    min-height: 75px;
+  }
+
+  &--mediumHeight {
+    min-height: 120px;
+  }
+
+  &--largeHeight {
+    min-height: 360px;
+  }
+}

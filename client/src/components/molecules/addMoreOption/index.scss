@@ -1,0 +1,11 @@
+.m-addMoreOption {
+  cursor: pointer;
+
+  &__displayItem {
+    @include displayFlex(row, start, center);
+
+    &__icon {
+      margin-left: 8px;
+    }
+  }
+}

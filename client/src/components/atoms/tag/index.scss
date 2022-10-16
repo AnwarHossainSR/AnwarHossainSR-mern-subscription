@@ -1,0 +1,134 @@
+.a-tag {
+  display: inline-block;
+  &--padSmall {
+    padding: 3px 8px;
+  }
+
+  &--padMedium {
+    padding: 3px 11px;
+  }
+
+  &--padLarge {
+    padding: 5px 10px;
+  }
+
+  &--small {
+    text-align: center;
+    @include font(12px, 16.8px);
+  }
+  // Dispaly
+  &--alignDisplay {
+    display: inline-block;
+  }
+  //   color
+
+  &--black {
+    color: $color-secondary-two;
+  }
+
+  &--white {
+    color: $color-white;
+  }
+
+  &--darkGrey {
+    color: $color-secondary-two;
+  }
+
+  //   weight
+  &--regular {
+    font-weight: $font-regular;
+  }
+
+  &--medium {
+    font-weight: $font-medium;
+  }
+
+  &--bold {
+    font-weight: $font-bold;
+  }
+
+  //   Background Color
+
+  &--dark {
+    background-color: $color-white-two;
+  }
+
+  &--muted {
+    background-color: $color-white-two;
+  }
+
+  &--secondary {
+    background-color: $color-secondary-three;
+  }
+
+  &--warning {
+    background-color: $color-warning;
+  }
+
+  &--lightWarning {
+    background-color: $color-light-warning;
+  }
+
+  &--success {
+    background-color: $color-secondary-four;
+  }
+
+  &--lightRound {
+    border-radius: 5px;
+  }
+
+  &--semiRound {
+    border-radius: 6px;
+  }
+
+  &--round {
+    border-radius: 8px;
+  }
+
+  &--light {
+    border: 1px solid $color-gray-light-two;
+  }
+
+  &--smallImage {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin: -2px 0px 0px 5.5px;
+  }
+
+  &--hover:hover {
+    cursor: pointer;
+    background-color: $color-secondary-one;
+    color: $color-white;
+  }
+
+  &--lightBlue {
+    border: 1px solid $color-secondary-five;
+  }
+  &--padSemiLarge {
+    padding: 3px 6px 3px 10px;
+  }
+
+  &--medium {
+    text-align: center;
+    @include font(14px, 19.6px);
+  }
+
+  &--mediumImage {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin: -2px 0px 0px 10px;
+  }
+  // Color
+  &--semiBlack {
+    color: $color-secondary-one;
+  }
+  &--semiGrey {
+    color: $color-gray-four;
+  }
+
+  &--mutedLight {
+    background-color: $color-white-three;
+  }
+}

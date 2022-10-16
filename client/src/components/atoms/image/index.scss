@@ -1,0 +1,51 @@
+.a-img {
+    &--small {
+        height: 30px;
+        width: 30px;
+    }
+
+    &--medium {
+        height: 50px;
+        width: 50px;
+    }
+
+    &--large {
+        height: 73px;
+        width: 73x;
+    }
+
+    &--xLarge {
+        height: 75px;
+        width: 75px;
+    }
+
+    &--xxLarge {
+        height: 101px;
+        width: 101px;
+    }
+
+    &--round {
+        border-radius: 100px;
+    }
+
+    &--semiRound {
+        border-radius: 6px;
+    }
+
+    &--light {
+        border: 0.5px solid $color-secondary-three;
+    }
+
+    &--dark {
+        border: 0.5px solid $color-secondary-two;
+    }
+
+    &--img {
+        height: 100%;
+        width: 100%
+    }
+
+    &--hover:hover {
+        filter: $box-shadow-image;
+    }
+}

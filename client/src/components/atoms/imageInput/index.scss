@@ -1,0 +1,14 @@
+.a-imageInput {
+  position: relative;
+  background-size: cover;
+  border-radius: 6px;
+  width: 73px;
+  height: 73px;
+
+  &__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,17 @@
+.m-QBHeaderleft {
+  @include displayFlex(column, left, flex-start);
+
+  &__group {
+    @include displayFlex(null,null,center);
+    margin-top: 3px;
+    &__image {
+      height: 15px;
+      width: 15px;
+      margin-right: 8px;
+    }
+    &__text {
+      @include displayFlex();
+      column-gap: 3px;
+    }
+  }
+}

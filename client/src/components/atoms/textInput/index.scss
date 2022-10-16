@@ -1,0 +1,43 @@
+.a-textInput {
+  width: 100%;
+  @include displayFlex(row, flex-start, center);
+  border: 1px solid $color-gray-light-two;
+  background-color: $color-white;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px 12px;
+
+  &__prefix {
+    &--rightMargin {
+      margin-right: 11.88px;
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+    background: $color-white;
+    border: none;
+    outline: none;
+    height: 18px;
+
+    &--small {
+      font-size: $font-13;
+    }
+
+    &--medium {
+      font-size: $font-14;
+    }
+
+    &--lightGreen {
+      background-color: $color-white-three;
+    }
+  }
+
+  &--lightGreen {
+    background-color: $color-white-three;
+  }
+
+  &--green {
+    border-color: $color-secondary-five;
+  }
+}
