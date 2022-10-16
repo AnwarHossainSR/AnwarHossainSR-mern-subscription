@@ -8,11 +8,11 @@ const router = express.Router();
 
 router.get("/", checkAuth, async (req, res) => {
   const user = await User.findOne({ email: req.user });
-  console.log(user.stripeCustomerId);
+  console.log(user?.stripeCustomerId);
 
   const subscriptions = await stripe.subscriptions.list(
     {
-      customer: user.stripeCustomerId,
+      customer: user?.stripeCustomerId,
       status: "all",
       expand: ["data.default_payment_method"],
     },

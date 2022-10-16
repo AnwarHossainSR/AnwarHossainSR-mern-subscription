@@ -1,17 +1,17 @@
-import express from "express";
-import { body, validationResult } from "express-validator";
-import User from "../models/user";
-import bcrypt from "bcryptjs";
-import JWT from "jsonwebtoken";
-import { checkAuth } from "../middleware/checkAuth";
-import { stripe } from "../utils/stripe";
+import bcrypt from 'bcryptjs';
+import express from 'express';
+import { body, validationResult } from 'express-validator';
+import JWT from 'jsonwebtoken';
+import { checkAuth } from '../middleware/checkAuth';
+import User from '../models/user';
+import { stripe } from '../utils/stripe';
 
 const router = express.Router();
 
 router.post(
-  "/signup",
-  body("email").isEmail().withMessage("The email is invalid"),
-  body("password").isLength({ min: 5 }).withMessage("The password is invalid"),
+  '/signup',
+  body('email').isEmail().withMessage('The email is invalid'),
+  body('password').isLength({ min: 5 }).withMessage('The password is invalid'),
   async (req, res) => {
     const validationErrors = validationResult(req);
 
@@ -33,7 +33,7 @@ router.post(
       return res.json({
         errors: [
           {
-            msg: "Email already in use",
+            msg: 'Email already in use',
           },
         ],
         data: null,
@@ -79,16 +79,16 @@ router.post(
   }
 );
 
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email });
+  const user: any = await User.findOne({ email });
 
   if (!user) {
     return res.json({
       errors: [
         {
-          msg: "Invalids credentials",
+          msg: 'Invalids credentials',
         },
       ],
       data: null,
@@ -101,7 +101,7 @@ router.post("/login", async (req, res) => {
     return res.json({
       errors: [
         {
-          msg: "Invalids credentials",
+          msg: 'Invalids credentials',
         },
       ],
       data: null,
@@ -128,16 +128,16 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.get("/me", checkAuth, async (req, res) => {
+router.get('/me', checkAuth, async (req, res) => {
   const user = await User.findOne({ email: req.user });
 
   return res.json({
     errors: [],
     data: {
       user: {
-        id: user._id,
-        email: user.email,
-        stripeCustomerId: user.stripeCustomerId,
+        id: user?._id,
+        email: user?.email,
+        stripeCustomerId: user?.stripeCustomerId,
       },
     },
   });
