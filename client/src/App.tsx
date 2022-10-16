@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Nav/Nav';
-import Articles from './pages/Articles';
-import ArticlesPlan from './pages/ArticlesPlan';
-import LandingPage from './pages/LandingPage';
-import { ProtectedRoute } from './routes/ProtectedRoute';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Nav/Nav";
+import Articles from "./pages/Articles";
+import ArticlesPlan from "./pages/ArticlesPlan";
+import LandingPage from "./pages/LandingPage";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
 
 function App() {
   return (

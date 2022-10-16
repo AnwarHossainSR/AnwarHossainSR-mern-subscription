@@ -1,11 +1,11 @@
-import { Container } from 'react-bootstrap';
-import styled from 'styled-components';
-import ModalComponent from '../Modal/Modal';
+import styled from "styled-components";
+import { Container } from "react-bootstrap";
+import ModalComponent from "../Modal/Modal";
 
 const HeroComponent = styled.header`
   padding: 5rem 0;
   height: 60vh;
-  background-image: url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2500&q=80');
+  background-image: url("https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2500&q=80");
   background-size: cover;
   background-position: center;
 `;
@@ -33,7 +33,8 @@ const Hero = () => {
         <HeaderContainer>
           <Heading>Feed your mind with the best</Heading>
           <SubHeading>
-            Grow, learn, and become more successful by reading some of the top article by highly reputable individuals
+            Grow, learn, and become more successful by reading some of the top
+            article by highly reputable individuals
           </SubHeading>
           <ModalComponent text="Signup" variant="primary" isSignupFlow={true} />
           <ModalComponent text="Login" variant="danger" isSignupFlow={false} />

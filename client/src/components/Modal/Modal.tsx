@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { useContext, useState } from 'react';
-import { Button, FormControl, InputGroup, Modal } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import { UserContext } from '../../context';
+import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
+import axios from "axios";
+import { useState, useContext } from "react";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context";
 
 interface ModalProps {
   text: string;
-  variant: 'primary' | 'secondary' | 'danger';
+  variant: "primary" | "secondary" | "danger";
   isSignupFlow: boolean;
 }
 
@@ -17,9 +17,9 @@ const ErrorMessage = styled.p`
 
 const ModalComponent = ({ text, variant, isSignupFlow }: ModalProps) => {
   const [show, setShow] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -31,16 +31,22 @@ const ModalComponent = ({ text, variant, isSignupFlow }: ModalProps) => {
   const handleClick = async () => {
     let response;
     if (isSignupFlow) {
-      const { data: signUpData } = await axios.post('http://localhost:8080/auth/signup', {
-        email,
-        password,
-      });
+      const { data: signUpData } = await axios.post(
+        "http://localhost:8080/auth/signup",
+        {
+          email,
+          password,
+        }
+      );
       response = signUpData;
     } else {
-      const { data: loginData } = await axios.post('http://localhost:8080/auth/login', {
-        email,
-        password,
-      });
+      const { data: loginData } = await axios.post(
+        "http://localhost:8080/auth/login",
+        {
+          email,
+          password,
+        }
+      );
       response = loginData;
     }
 
@@ -57,14 +63,21 @@ const ModalComponent = ({ text, variant, isSignupFlow }: ModalProps) => {
       loading: false,
       error: null,
     });
-    localStorage.setItem('token', response.data.token);
-    axios.defaults.headers.common['authorization'] = `Bearer ${response.data.token}`;
-    navigate('/articles');
+    localStorage.setItem("token", response.data.token);
+    axios.defaults.headers.common[
+      "authorization"
+    ] = `Bearer ${response.data.token}`;
+    navigate("/articles");
   };
 
   return (
     <>
-      <Button onClick={handleShow} variant={variant} size="lg" style={{ marginRight: '1rem', padding: '0.5rem 3rem' }}>
+      <Button
+        onClick={handleShow}
+        variant={variant}
+        size="lg"
+        style={{ marginRight: "1rem", padding: "0.5rem 3rem" }}
+      >
         {text}
       </Button>
 
@@ -75,11 +88,19 @@ const ModalComponent = ({ text, variant, isSignupFlow }: ModalProps) => {
         <Modal.Body>
           <InputGroup className="mb-3">
             <InputGroup.Text>Email</InputGroup.Text>
-            <FormControl type="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <FormControl
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </InputGroup>
           <InputGroup className="mb-3">
             <InputGroup.Text>Password</InputGroup.Text>
-            <FormControl type="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <FormControl
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </InputGroup>
           {errorMsg && <ErrorMessage>{errorMsg}</ErrorMessage>}
         </Modal.Body>
