@@ -23,23 +23,17 @@ router.get('/', checkAuth, async (req, res) => {
   if (!subscriptions.data.length) return res.json([]);
 
   //@ts-ignore
-  const plan = subscriptions.data[0].plan.nickname;
-
-  console.log(plan);
-  
+  const plan = subscriptions.data[0].plan.nickname;  
 
   if (plan === 'Basic') {
-    console.log('Basic');
     const articles = await Article.find({ access: 'Basic' });
     return res.json(articles);
   } else if (plan === 'Standard') {
-    console.log('Standard');
     const articles = await Article.find({
       access: { $in: ['Basic', 'Standard'] },
     });
     return res.json(articles);
   } else {
-    console.log('Premium');
     const articles = await Article.find({});
     return res.json(articles);
   }
